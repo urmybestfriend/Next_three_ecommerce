@@ -1,0 +1,255 @@
+### Signup
+POST http://localhost:9001/api/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "New",
+    "lastName": "User",
+    "email": "sirevi5989@paxven.com",
+    "phone": "0437563829",
+    "password": "olsennew",
+    "country": "Canada",
+    "city": "Ontario",
+    "company": "GI",
+    "zip": "6ui"
+
+}
+
+### Add a user
+POST http://localhost:9001/api/auth/create-user
+Content-Type: application/json
+
+{
+    "firstName": "New",
+    "lastName": "User",
+    "email": "sirevi5989@paxven.com",
+    "phone": "0437563829",
+    "country": "Canada",
+    "city": "Ontario",
+    "company": "GI",
+    "zip": "6ui"
+
+}
+
+### Verify Email
+GET http://localhost:9001/api/auth/verify-email?token=cefe378389bd880472443d1014754910c4daaaed6bb6e664727d710e870afc47dbb81fa03f957b09c03d493659b507c4d7f240f93c2ac49ac40b940938ac8063&userId=63ab634a6b12e14ffc87d0bc
+
+
+
+
+### Login
+POST http://localhost:9001/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "sirevi5989@paxven.com",
+    "password": "olsennews"
+
+}
+
+### Forgot Password
+POST http://localhost:9001/api/auth/forgot-password
+Content-Type: application/json
+
+{
+    "email": "sirevi5989@paxven.com"
+}
+
+### Reset Password
+PATCH http://localhost:9001/api/auth/reset-password
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzlhZTliZTJhZDE2Mzc4OGI2MWNiNDkiLCJyb2xlIjoidXNlciIsImVtYWlsIjoic2lyZXZpNTk4OUBwYXh2ZW4uY29tIiwiZmlyc3RuYW1lIjoiTmV3IiwianRpIjoiMTIwNjI1NjQtYWVkZi00YTk5LWIzZGMtZmRiMGViZDhjMzdjIiwiaWF0IjoxNjcxMTE2MzcxLCJleHAiOjE2NzExNDUxNzEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMS9hcGkvYXV0aCIsInN1YiI6IkhlbnJ5In0.R1iIltjhJDlFisQLlD4akF0-o3apOUd9pWrzKZNgdTA",
+    "newpassword": "olsennews"
+
+}
+
+### Generate Access Token from refreshToken
+POST http://localhost:9001/api/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mzk0YmY2N2NmNThmOTM4MjgzNmQzZGUiLCJyb2xlIjoidXNlciIsImVtYWlsIjoiY2FqYWc2MTgyOEBjZW9zaHViLmNvbSIsImZpcnN0bmFtZSI6IlRlc3QiLCJqdGkiOiI0MGMzYjRkMS04ODdiLTQzMTEtOTc2OS1mOTI5OGZmMWVkYWMiLCJpYXQiOjE2NzA3MTA5NjMsImV4cCI6MTY3MDczOTc2MywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDAxL2FwaS9hdXRoIiwic3ViIjoiSGVucnkifQ.9e1ftDWzVKT5uc-GFTtArOFJI5n_c8CPOEQAcIMfRcI"
+}
+
+### Revoke Refresh Token
+POST http://localhost:9001/api/auth/revoke-refresh-token
+Content-Type: application/json
+
+{
+    "userId": "6394bf67cf58f9382836d3de"
+
+}
+
+### Get all users
+GET http://localhost:9001/api/users?deleted=true
+
+### Get user by id
+GET http://localhost:9001/api/users/6394bf67cf58f9382836d3de
+
+### Get details of user currently logged in
+GET http://localhost:9001/api/users/profile/details
+
+### Update User by Id
+PATCH http://localhost:9001/api/users/6394bf67cf58f9382836d3de
+Content-Type: application/json
+
+{
+    "firstName": "Abena"
+}
+
+### Update details of currently logged in user
+PATCH http://localhost:9001/api/users/profile/update
+Content-Type: application/json
+
+{
+    "country": "Canada"
+}
+
+### Update password of currently logged in user
+PATCH http://localhost:9001/api/users/profile/change-password
+Content-Type: application/json
+
+{
+    "oldpassword": "gufdviv",
+    "newpassword": "wdfucegcfj"
+}
+
+### Delete User by Id
+DELETE  http://localhost:9001/api/users/6394bf67cf58f9382836d3de
+Content-Type: application/json
+
+###Change user status to approved
+PATCH   http://localhost:9001/api/users/approve/6394bf67cf58f9382836d3de
+Content-Type: application/json
+
+### Change user to admin
+PATCH  http://localhost:9001/api/users/change-role/6394bf67cf58f9382836d3de
+Content-Type: application/json
+
+{
+    "role": "user"
+}
+
+### Create Payment
+POST http://localhost:9001/api/payment/createpayment
+Content-Type: application/json
+
+{
+    "line_items": [
+    {
+      "price": "price_1MGcjX2eZvKYlo2CQ0X2e7SQ",
+      "quantity": 1
+    }
+    ]
+
+}
+
+###Create a Price object
+
+POST http://localhost:9001/api/payment/createprice
+Content-Type: application/json
+
+{
+    "unit_amount": 2000,
+    "currency": "eur",
+    "product_data": {
+        "name": "New Product"
+    }
+
+}
+
+###Create checkout
+POST http://localhost:9001/api/payment
+Content-Type: application/json
+
+{
+    "success_url": "https://example.com/success",
+    "cancel_url": "https://example.com/cancel",
+    "metadata": {"order":"63a9910acef4379edeca55b1"},
+    "line_items": [
+        {"price_data": {
+            "unit_amount": 23,
+            "currency": "eur",
+            "product_data": {
+                "name": "New Product"
+            }
+            },
+            "quantity": 2
+    },
+            {"price_data": {
+            "unit_amount": 23,
+            "currency": "eur",
+            "product_data": {
+                "name": "New Product1"
+            }
+            },
+            "quantity": 2
+    }
+    ],
+    "mode": "payment"
+}
+
+### Get all payments
+GET http://localhost:9001/api/payment
+
+### Get payment by id
+GET http://localhost:9001/api/payment/564jfrfrtalwsoe
+
+### Create Product
+POST http://localhost:9001/api/products
+Content-Type: application/json
+
+{
+    "name": "New Product1",
+    "price": 23.50,
+    "quantity": 1,
+    "isAvailable":true
+
+}
+
+### Get all products
+GET http://localhost:9001/api/products
+
+### Get product by id
+GET http://localhost:9001/api/products/63a466c23ee713f0ac2e77b5
+
+### Update product
+PATCH http://localhost:9001/api/products/63a466c23ee713f0ac2e77b5
+Content-Type: application/json
+
+{
+    "quantity": 6
+}
+
+### Delete product
+DELETE http://localhost:9001/api/products/63a466c23ee713f0ac2e77b5
+
+### Create Order
+POST http://localhost:9001/api/order
+Content-Type: application/json
+
+{
+    "items": [
+      {"product":"63a46c815ea5dcef30360feb", "amount":23.9, "quantity": 4},
+       {"product":"63a5d9ec1821b13ce37767e8", "amount":23.9, "quantity": 5}
+      
+      ]
+}
+
+### Get all order
+GET http://localhost:9001/api/order
+
+### Get order by id
+GET http://localhost:9001/api/order/564jfrfrtalwsoe
+
+### Get order by user id
+GET http://localhost:9001/api/order/user/564jfrfrtalwsoe
+
+
+### Update order
+PATCH http://localhost:9001/api/order/45djkelaoipqoaw
+
+### Delete order
+DELETE http://localhost:9001/api/order/54deiecopdhde

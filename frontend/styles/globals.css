@@ -1,0 +1,81 @@
+input {
+  padding: 0;
+}
+
+.btn-borderless {
+  text-decoration: none;
+  outline: none;
+  background: none;
+}
+
+.danger {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+.pagination__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 0;
+}
+
+.pagination__section .page_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.pagination_arrows {
+  color: rgba(76, 76, 76, 0.755);
+}
+
+.active_page_number {
+  background: #000;
+  color: var(--global-white);
+  transform: scale(1.1);
+}
+
+.inactive_page_number {
+  background: none;
+  color: rgb(181, 181, 181);
+}
+
+.pagination_arrows:hover,
+.active_page_number:hover,
+.inactive_page_number:hover {
+  transform: scale(1.05);
+  filter: brightness(1.5);
+}
+
+select {
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  padding: 0.5rem 1.5rem;
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.204);
+  border: none;
+  outline: none;
+  /* box-shadow: 4px 0px 4px var(--box-shadow); */
+  border-radius: 10px;
+}
+option {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.668);
+  border-radius: 10px;
+  font-size: 16px;
+  width: 200px;
+}

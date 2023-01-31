@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Products",
+    "size": "sm",
+    "groups": [
+      {
+        "name": "Our Products",
+        "links": [
+          {
+            "name": "Browse catalogue",
+            "link": "/listing-1"
+          }
+        ]
+      },
+      {
+        "links": [
+          {
+            "name": "",
+            "link": "/listing-4"
+          },
+          {
+            "name": "",
+            "link": "/listing-5"
+          },
+          {
+            "name": "",
+            "link": "/listing-6"
+          },
+          {
+            "name": "",
+            "link": "/listing-7"
+          }
+        ]
+      },
+      {
+        "img": "/img/product/0950354513_1_1_1.jpg"
+      }
+    ]
+  }
+]
