@@ -1,0 +1,136 @@
+{{!< default}}
+
+{{#post}}
+
+<main id="gh-main" class="gh-main">
+    <article class="gh-article {{post_class}}">
+        {{> content}}
+    </article>
+
+    {{#if access}}
+        <section class="gh-content gh-canvas">
+            <div class="rhino-section" id="rhino-render" data-key="RhdDYr!J36oX*A">
+                <div id="loader"></div> 
+                <div id="container"> 
+                    {{!-- Toggle screen size --}}
+                    <button id="toggle-full-screen" class="toggle-screen">
+                        <span class="toggle-screen__maximize">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                        </span>
+                        <span class="toggle-screen__minimize not-active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path></svg>
+                        </span>
+                    </button>
+
+                    {{!-- Tabs --}}
+                    <div id="overlay" class="tabs">
+                        {{!-- Upload --}}
+                        <div class="tabs__button tabs__button--upload">
+                            <label for="upload">
+                                <span>
+                                    Upload
+                                </span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </span>
+                            </label>
+                            <input type="file" accept=".stl, .obj, .fbx" id="upload" >
+                        </div>
+
+                        {{!-- Tab 1 --}}
+                        <div class="tabs__tab">
+                            <label for="tab1">Scan</label>
+                            <input class="tabs__tab__button" type="checkbox" name="tabs" id="tab1">
+                            <div class="tabs__tab__content">
+                                <div class="tabs__tab__content__inner">
+                                    <div class="rhino-controls__inputs">
+                                        <div class="rhino-controls__inputs__row">
+                                            <label for="slider1">slider1</label>
+                                            <div class="range-wrap">
+                                                <input type="range" id="slider1" min="0" max="10" value="5" step="1" class="range" />
+                                                <output class="bubble"></output>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{!-- Tab 2 --}}
+                        <div class="tabs__tab">
+                            <label for="tab2">Shape</label>
+                            <input class="tabs__tab__button" type="checkbox" name="tabs" id="tab2">
+                            <div class="tabs__tab__content">
+                                <div class="tabs__tab__content__inner">
+                                    <div class="rhino-controls__inputs">
+                                        <div class="rhino-controls__inputs__row">
+                                            <label for="slider2">slider2</label>
+                                            <div class="range-wrap">
+                                                <input type="range" id="slider2" min="0" max="10" value="5" step="0.1" class="range" />
+                                                <output class="bubble"></output>
+                                            </div>
+                                        </div>
+                                        <div class="rhino-controls__inputs__row">
+                                            <label for="slider3">slider3</label>
+                                            <div class="range-wrap">
+                                                <input type="range" id="slider3" min="0" max="10" value="5" step="1" class="range" />
+                                                <output class="bubble"></output>
+                                            </div>
+                                        </div>
+                                        <div class="rhino-controls__inputs__row">
+                                            <label for="slider4">slider4</label>
+                                            <div class="range-wrap">
+                                                <input type="range" id="slider4" min="0" max="10" value="5" step="0.1" class="range" />
+                                                <output class="bubble"></output>
+                                            </div>
+                                        </div>
+                                        <div class="rhino-controls__inputs__row">
+                                            <label for="slider5">slider5</label>
+                                            <div class="range-wrap">
+                                                <input type="range" id="slider5" min="0" max="10" value="5" step="1" class="range" />
+                                                <output class="bubble"></output>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        {{!-- Download --}}
+                        <div class="tabs__button tabs__button--download">
+                            <button  id="downloadButton" disabled>
+                                <span>
+                                    Download
+                                </span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/if}}
+</main>
+
+{{/post}}
+
+{{#contentFor "scripts"}}
+    <!-- Import maps polyfill -->
+    <!-- Remove this when import maps will be widely supported -->
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.140.2/build/three.module.js",
+                "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.140.2/examples/jsm/controls/OrbitControls.js",
+                "three/examples/jsm/loaders/3DMLoader": "https://unpkg.com/three@0.140.2/examples/jsm/loaders/3DMLoader.js"
+            }
+        }
+    </script>
+    <script type="module" src="{{asset "built/colourortho/script.js"}}"></script>
+{{/contentFor}}
